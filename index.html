@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas SkyBase | Junior Astronaut Mission Trainer</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="mission.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+<header><span>ATLAS JUNIOR / BANGLADESH</span><a href="#field-notes">Field notes ↓</a></header>
+<main>
+<section class="hero" aria-labelledby="title">
+<div><p class="eyebrow">JUNIOR ASTRONAUT MISSION TRAINER</p><h1 id="title">Atlas<br>SkyBase<span>.</span></h1>
+<p>Night is approaching on Mars. Keep four astronauts safe through six shifts and bring the rover home with two samples.</p><a class="button" href="#control">Take command ↓</a></div>
+<figure><img src="assets/atlas-rover.jpg" alt="Atlas Junior’s six-wheel rover on orange Martian terrain"><figcaption>ATLAS JUNIOR · ROVER CONCEPT</figcaption></figure>
+</section>
+<section id="control">
+<div class="section-head"><div><p class="eyebrow">ELYSIUM PLANITIA / MARS</p><h2>Mission control</h2></div><button id="reset" type="button" class="secondary">Restart mission</button></div>
+<div id="status" role="status"></div>
+<div id="meters" class="meters" aria-label="Crew and base resources"></div>
+<div class="console">
+<form id="orders">
+<h3>Set orders</h3>
+<label>Habitat heating <select name="heat"><option value="1">On</option><option value="0">Off · use heat reserve</option></select></label>
+<label>Oxygen system <select name="air"><option value="1">On · uses water</option><option value="0">Off · use oxygen reserve</option></select></label>
+<label>Greenhouse lights <select name="grow"><option value="0">Off</option><option value="1">On · grow food for next shift</option></select></label>
+<label>Crew shelter <select name="shelter"><option value="0">Remain in habitat</option><option value="1">Shelter · blocks rover exploration</option></select></label>
+<label>Rover <select name="rover"><option value="hold">Hold position</option><option value="explore">Explore / collect sample</option><option value="recall">Recall to base</option></select></label>
+<label class="checkbox"><input type="checkbox" name="radio"> Send Earth a status report · 2 energy</label>
+<p id="budget" aria-live="polite"></p>
+<button id="advance">Run shift →</button>
+</form>
+<aside><h3>Outpost map</h3><div id="map" aria-label="Rover route"></div><p id="link"></p><h3>Shift log</h3><ol id="log" reversed></ol></aside>
+</div>
+</section>
+<section id="field-notes"><p class="eyebrow">CREW BRIEFING</p><h2>Field notes</h2>
+<div class="notes"><article><h3>Archived Mars temperatures</h3><p>NASA InSight recorded these daily lows at Elysium Planitia in October 2020. Local thermal effects around the lander can influence the readings. The game uses these lows as references for shifts with a fictional solar forecast.</p><table><caption>InSight daily lows in °C</caption><thead><tr><th scope="col">Sol</th><th scope="col">Low</th></tr></thead><tbody id="weather"></tbody></table><p><a href="https://api.nasa.gov/assets/insight/insight_mars_wind_rose.html">NASA InSight archive example ↗</a></p></article>
+<article><h3>Four roles, one crew</h3><ul><li><b>Commander</b> watches the radiation forecast and sends Earth reports.</li><li><b>Power engineer</b> checks the budget and keeps the habitat warm.</li><li><b>Life support engineer</b> manages oxygen, water and food.</li><li><b>Rover operator</b> plans sample collection and the return to base.</li></ul><p>After each shift, discuss which reserve you spent and what that means for the next shift. A sol is a Martian day.</p><img loading="lazy" src="assets/rover-anatomy.png" alt="Rover diagram showing the power unit, science deck, mast camera, sample arm and six-wheel suspension"></article></div>
+</section>
+</main>
+<footer>Atlas Junior · 2026 NASA Space Apps Challenge project<p>NASA does not endorse any non-U.S. Government entity and is not responsible for information contained on non-U.S. Government websites. For non-U.S. Government websites, participants must comply with any data use parameters of that specific website.</p></footer>
+</body></html>
